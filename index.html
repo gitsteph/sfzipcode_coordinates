@@ -1,0 +1,61 @@
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>SF ZIP Code Coordinates</title>
+        <style>
+            #bottomLabel {
+                border-style: solid;
+                border-color: grey;
+                border-width: 1px 1px 0px 1px;
+                font-family: Arial, sans-serif;
+                padding: 5px;
+                font-size: 11px;
+            }
+        </style>
+    </head>
+    <body>       
+        <script type="text/javascript" src="plotlyjs-bundle.js"></script>
+        <script type="text/javascript" src="figure.js"></script>
+        <div id="0509ee6c-d388-421d-902d-af5a59c8bf58" style="width: 100%; height: 100%;" class="plotly-graph-div"></div>
+        <script type="text/javascript">
+            (function() {
+                window.PLOTLYENV={'BASE_URL': 'https://plot.ly'};
+
+                var gd = document.getElementById('0509ee6c-d388-421d-902d-af5a59c8bf58');
+                var resizeDebounce = null;
+
+                function resizePlot() {
+                    var bb = gd.getBoundingClientRect();
+                    Plotly.relayout(gd, {
+                        width: bb.width,
+                        height: bb.height
+                    });
+                }
+
+                window.addEventListener('resize', function() {
+                    if (resizeDebounce) {
+                        window.clearTimeout(resizeDebounce);
+                    }
+                    resizeDebounce = window.setTimeout(resizePlot, 100);
+                });
+
+                Plotly.plot(gd,  {
+                    data: figure.data,
+                    layout: figure.layout,
+                    frames: figure.frames
+                });  
+           }());
+        </script>
+
+        <span style="position: relative; float: right; right: 80px; bottom: 40px;"><div id="bottomLabel">
+            Data sourced from Decennial Census 2010,
+            G001 (Geographic Identifiers)<br>
+            (<a href="https://factfinder.census.gov/">https://factfinder.census.gov/</a>)<br>
+        </div>
+        <div id="bottomLabel" style="border-width: 1px;">
+            Scatter plot created with Plotly.<br>
+            Source code: <a href="https://github.com/gitsteph/sfzipcode_coordinates">https://github.com/gitsteph/sfzipcode_coordinates</a><br>
+        </div></span>
+
+    </body>
+</html>
